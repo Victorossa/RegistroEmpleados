@@ -1,0 +1,34 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <div class="form-group">
+        <label>Nombre Completo</label>
+        <input name="NombreCompleto" #NombreCompleto="ngModel" [(ngModel)]="service.formData.NombreCompleto"
+            class="form-control" required>
+            <div class="validation-error" *ngIf="NombreCompleto.invalid && NombreCompleto.touched">Este campo es requerido</div>
+    </div>
+
+    <div class="form-group">
+        <label>Posicion</label>
+        <input name="Posicion" #Posicion="ngModel" [(ngModel)]="service.formData.Posicion" class="form-control">
+        <div class="validation-error" *ngIf="NombreCompleto.invalid && NombreCompleto.touched">Este campo es requerido</div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label>Codigo</label>
+            <input name="EMPCodigo" #EMPCodigo="ngModel" [(ngModel)]="service.formData.EMPCodigo" class="form-control">
+            <div class="validation-error" *ngIf="NombreCompleto.invalid && NombreCompleto.touched">Este campo es requerido</div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Movil</label>
+            <input name="Movil" #Movil="ngModel" [(ngModel)]="service.formData.Movil" class="form-control">
+            <div class="validation-error" *ngIf="NombreCompleto.invalid && NombreCompleto.touched">Este campo es requerido</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-block">Guardar</button>
+    </div>
+
+</form>
