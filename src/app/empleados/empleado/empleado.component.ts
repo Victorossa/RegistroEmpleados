@@ -36,6 +36,7 @@ export class EmpleadoComponent implements OnInit {
   insertRecord(form: NgForm) {
     this.service.postEmpleado(form.value).subscribe(res => {
       this.toastr.success('Guardado con Exito!!!','EMP. Registrado');
+      this.service.refreshList();
       this.resetForm(form);
     })
   }

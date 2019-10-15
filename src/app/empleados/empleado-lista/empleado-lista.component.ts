@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpleadoService } from 'src/app/shared/empleado.service';
 
 @Component({
   selector: 'app-empleado-lista',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpleadoListaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : EmpleadoService) { }
 
   ngOnInit() {
+    this.service.refreshList();
   }
 
 }

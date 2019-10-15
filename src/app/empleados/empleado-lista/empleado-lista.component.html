@@ -1,1 +1,8 @@
-<p>empleado-lista works!</p>
+<table class="table table-hover">
+    <tr *ngFor="let item of service.list">
+        <td>[{{item.EMPCodigo}}] - {{item.NombreCompleto}}</td>
+        <td>{{item.Posicion}}</td>
+        <td>{{item.Movil}}</td>
+        <td><button class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+</table>

@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http'
 export class EmpleadoService {
 
   formData: Empleado;
+  list : Empleado[];
   readonly rootURL = "http://localhost:56143/api";
 
 
@@ -15,5 +16,10 @@ export class EmpleadoService {
 
   postEmpleado(formData: Empleado) {
    return this.http.post(this.rootURL + '/Empleado', formData);
+  }
+
+  refreshList(){
+    return this.http.get(this.rootURL + '/Empleado')
+    .toPromise().then(res => this.list = res as Empleado[]);
   }
 }
